@@ -14,21 +14,6 @@ SITES_list = ["Ispra EARLINET", "Potenza EARLINET"]
 earID_list = ["ipr", "pot"]
 monID_list = ["Ispra", "Potenza-EARLINET"]
 
-"""
-#########
-data = scipy.io.loadmat('/mnt/data_vre/DOD/AERONET_Sites/20040101_20240625_IMAA_Potenza_lv20_15.mat')
-ts_aero_aeDT = data['DATETIME'].flatten()
-ts_aero_aeDO = data['DOD'].flatten()
-ts_aero_aeLV = data['LEVEL'].flatten()
-ts_aero_aeWL = data['WAVELENGTH'].flatten()
-#########
-dataset = nc.Dataset('./AERONET_'+obs_site+'_lv20_15.nc')
-ts_aero_aeDT = dataset.variables['DATETIME'][:]
-ts_aero_aeDO = dataset.variables['DOD'][:]
-ts_aero_aeLV = dataset.variables['LEVEL'][:]
-ts_aero_aeWL = dataset.variables['WAVELENGTH'][:]
-#########
-"""
 
 #
 def is_valid_date(date_string):
@@ -95,13 +80,6 @@ def main(obs_site, obs_date, obs_hour):
 	#sys.exit(0)
 
 
-	# ---- SELECT DATE-TIME ----
-	# INPUT FORMAT: Y,M,D,H,MI,S (MI & S always 0)
-	#USERS_DT = datetime(2015, 7, 30, 21, 0, 0)  # H can take only the following values: 0, 3, 6, 9, 12, 15, 18, 21 [UTC]
-
-
-	#print( monID_list[indx - 1] )
-
 	# MONARCH DATETIME
 	#mon_file = "C:/Users/Admin/Desktop/ITINERIS/AERONET_ITALIA_25-06-2024/nc/MONARCH_Reanalysis_ec550du_" + monID_list[indx - 1] + "_2006-2016.nc"
 	mon_file = "./DATA/MONARCH_Reanalysis_ec550du_" + monID_list[indx - 1] + "_2006-2016.nc"
@@ -141,16 +119,6 @@ def main(obs_site, obs_date, obs_hour):
 	if len(inear_DT) > 1:
 		closestIndex = np.argmin(np.abs(ear_DATETIMEmid[inear_DT] - USERS_DT))
 		inear_DT = inear_DT[closestIndex]
-
-	"""
-	print(dt_start)
-	print(dt_end)
-	print(inear_DT)
-	sys.exit()
-	"""
-
-	#print(inmon_DT[0])
-	#sys.exit()
 
 	#inmon_DT = [] # Fake
 	#inear_DT = [] # Fake
