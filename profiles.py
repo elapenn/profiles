@@ -243,7 +243,7 @@ def main(obs_site, obs_date, obs_hour):
 		plt.xlim([0, x_max])
 		plt.gca().tick_params(axis='both', which='major', labelsize=14)
 
-		output_file = obs_site+'_'+obs_date.replace('-','')+'_'+obs_hour.replace(':','')+'.png'
+		output_file = './'+obs_site+'_'+obs_date.replace('-','')+'_'+obs_hour.replace(':','')+'.png'
 
 		# Remove output file (if exists)
 		if os.path.exists(output_file):
