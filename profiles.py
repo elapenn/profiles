@@ -250,7 +250,7 @@ def main(obs_site, obs_date, obs_hour):
 			os.remove(output_file)
 
 		plt.savefig(output_file, dpi=300)
-		plt.show()
+		#plt.show()
 	#
 
 
