@@ -16,7 +16,7 @@ monID_list = ["Ispra", "Potenza-EARLINET"]
 
 
 # Set data directories
-plot_path = './plot/'
+plot_path = 'graphs/'
 
 #
 def is_valid_date(date_string):
