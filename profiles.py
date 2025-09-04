@@ -15,8 +15,8 @@ earID_list = ["ipr", "pot"]
 monID_list = ["Ispra", "Potenza-EARLINET"]
 
 
-# Set data directories
-plot_path = 'graphs/'
+# Set paths
+plot_path = './graphs/'
 
 #
 def is_valid_date(date_string):
@@ -47,6 +47,8 @@ def is_valid_time(time_string):
 
 #
 def main(obs_site, obs_date, obs_hour):
+
+	global plot_path
 
 	global SITES_list
 	global earID_list
